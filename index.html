@@ -15,12 +15,20 @@
     <input id="azul" name="azul" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
     <label for="azul">azul</label>
 
+    <br>
+    <br>
+    <br>
+
+    <div id="caixa" style="background-color:yellow;width:200px; height:200px;">
+qqqqq
+    </div>
+
     <script>
         function mudarCorFundo() {
             var vermelho = document.getElementById("vermelho").value;
             var verde = document.getElementById("verde").value;
             var azul = document.getElementById("azul").value;
-            document.body.style.background = "rgb(" + vermelho + "," + verde + "," + azul + ")";
+            document.getElementById('caixa').style.background = "rgb(" + vermelho + "," + verde + "," + azul + ")";
         }
 
         // Para iniciar a tela, precisa fazer essa chamada inicial.
