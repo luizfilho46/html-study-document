@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    <input id="vermelho" name="vermelho" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
+    <label for="vermelho">vermelho</label>
+    <br>
+    <input id="verde" name="verde" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
+    <label for="verde">verde</label>
+    <br>
+    <input id="azul" name="azul" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
+    <label for="azul">azul</label>
+
+    <script>
+        function mudarCorFundo() {
+            var vermelho = document.getElementById("vermelho").value;
+            var verde = document.getElementById("verde").value;
+            var azul = document.getElementById("azul").value;
+            document.body.style.background = "rgb(" + vermelho + "," + verde + "," + azul + ")";
+        }
+
+        // Para iniciar a tela, precisa fazer essa chamada inicial.
+        mudarCorFundo()
+
+    </script>
+
+</body>
+
+</html>
