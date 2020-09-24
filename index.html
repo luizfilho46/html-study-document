@@ -3,7 +3,7 @@
 
 <head>
     <!-- A estilização é opcional  -->
-    <!--style>
+    <style>
         input[type=range] {
             height: 38px;
             -webkit-appearance: none;
@@ -21,7 +21,7 @@
             cursor: pointer;
             animate: 0.2s;
             box-shadow: 1px 1px 1px #000000;
-            background: #3071A9;
+            background: #FF0000;
             border-radius: 5px;
             border: 1px solid #000000;
         }
@@ -32,7 +32,7 @@
             height: 30px;
             width: 15px;
             border-radius: 5px;
-            background: #FFFFFF;
+            background: #10F0F0;
             cursor: pointer;
             -webkit-appearance: none;
             margin-top: -11px;
@@ -105,10 +105,10 @@
         input[type=range]:focus::-ms-fill-upper {
             background: #3071A9;
         }
-    </style-->
-    <style>
-        input[type=range] {
-            width: 100%;
+
+        div {
+            text-align: center;
+            color: white;
         }
     </style>
 </head>
@@ -129,13 +129,13 @@
     <br>
     <br>
 
-    <div id="caixa" style="background-color:yellow;width:100%; height:100px;"></div>
+    <div id="caixa" style="background-color:yellow;width:100%; height:70px;">Mistura das Três cores</div>
     <br>
-    <div id="vermelho" style="background-color:red;width:100%; height:100px;"></div>
+    <div id="divvermelho" style="background-color:red;width:100%; height:70px;">Somente a primeira cor</div>
     <br>
-    <div id="verde" style="background-color:green;width:100%; height:100px;"></div>
+    <div id="divverde" style="background-color:green;width:100%; height:70px;">Somente a segunda cor</div>
     <br>
-    <div id="azul" style="background-color:blue;width:100%; height:100px;"></div>
+    <div id="divazul" style="background-color:blue;width:100%; height:70px;">Somente a terceira cor</div>
     <br>
 
     <script>
@@ -148,9 +148,18 @@
             /* Obtém o elemento div com  id=caixa*/
             /* atribui ao atributo background da div os valores numéricos por meio da função rgb() do css */
             document.getElementById('caixa').style.background = "rgb(" + vermelho + "," + verde + "," + azul + ")";
+        
+            
+
+            /* Extra: Obtendo as cores individualmente*/
+            document.getElementById('divvermelho').style.background = "rgb(" + vermelho + ", 0, 0)";
+            document.getElementById('divverde').style.background = "rgb(0," + verde + ", 0)";
+            document.getElementById('divazul').style.background = "rgb(0, 0," + azul + ")";
+        
+        
         }
 
-        // Para iniciar a tela, precisa fazer essa chamada inicial.
+        /* Para iniciar a tela, precisa fazer essa chamada inicial. */
         mudarCorFundo()
 
     </script>
