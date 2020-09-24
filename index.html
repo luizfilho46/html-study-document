@@ -2,36 +2,49 @@
 <html>
 
 <head>
+        <style>
+            input[type=range] {
+                width: 100%;
+            }
+
+            #caixa {
+                background-color: pink;
+                width: 100%;
+                height: 100px;
+            }
+        </style>
 </head>
 
 <body>
-
+    <label for="vermelho">vermelho</label><br>
     <input id="vermelho" name="vermelho" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
-    <label for="vermelho">vermelho</label>
-    <br>
+    
+    <label for="verde">verde</label><br>
     <input id="verde" name="verde" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
-    <label for="verde">verde</label>
-    <br>
-    <input id="azul" name="azul" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input>
-    <label for="azul">azul</label>
-
-    <br>
-    <br>
-    <br>
-
-    <div id="caixa" style="background-color:yellow;width:200px; height:200px;">
-qqqqq
-    </div>
+    
+    <label for="azul">azul</label><br>
+    <input id="azul" name="azul" type="range" min="0" max="255" step="1" value="0" onchange="mudarCorFundo()"></input><br><br>
+    
+    <div id="caixa"></div>
 
     <script>
+
         function mudarCorFundo() {
+            /* Obtendo os valores dos input[type=range], que podem variar de ero a 255 */
             var vermelho = document.getElementById("vermelho").value;
             var verde = document.getElementById("verde").value;
             var azul = document.getElementById("azul").value;
+
+            /* 
+             * Acessando o atributo background da div caixa
+             * e atribuindo a ele a função rgb() do css com os valores obtidos acima.
+             *
+             * 
+            */
             document.getElementById('caixa').style.background = "rgb(" + vermelho + "," + verde + "," + azul + ")";
         }
 
-        // Para iniciar a tela, precisa fazer essa chamada inicial.
+        /* Para iniciar a tela, precisa fazer essa chamada inicial. */
         mudarCorFundo()
 
     </script>
